@@ -1,4 +1,3 @@
-
 import React from 'dom-chef';
 import select from 'select-dom';
 import * as pageDetect from 'github-url-detection';
@@ -14,6 +13,7 @@ async function init(): Promise<void> {
 			<img
 				className="avatar mr-2"
 				src={src}
+				style={transform: 'translate(-1.5px)'}
 				width="16"
 				height="16"
 				alt={`@${author.textContent!.trim()}`}
