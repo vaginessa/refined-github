@@ -6,7 +6,7 @@ import * as pageDetect from 'github-url-detection';
 import features from '.';
 import getUserAvatar from '../github-helpers/get-user-avatar';
 
-async function highlightCollaborators(): Promise<void> {
+async function init(): Promise<void> {
 	for (const author of select.all('.js-issue-row [data-hovercard-type="user"]')) {
 		const src = getUserAvatar(author.textContent!.trim(), 16)!;
 
@@ -31,5 +31,5 @@ void features.add(import.meta.url, {
 		() => select.exists('.blankslate'),
 	],
 	deduplicate: 'has-rgh-inner',
-	init: highlightCollaborators,
+	init,
 });
